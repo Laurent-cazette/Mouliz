@@ -1,0 +1,35 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "godMichel"
+          name: "Admin"
+          password: ${USER_GOD_PASSWORD}
+        - id: "adm"
+          name: "Administration"
+          password: ${USER_ADM_PASSWORD}
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+            - name: "admin"
+              permissions:
+                - "Overall/Administer"
+              assignments:
+                - "godMichel"
+            - name: "adm"
+              permissions:
+                - "Overall/Read"
+                - "Job/Create"
+                - "Job/Build"
+                - "Job/Configure"
+                - "Job/Delete"
+                - "Job/Move"
+                - "Job/Cancel"
+                - "Job/Read"
+                - "Job/Workspace"
+              assignments:
+                - "adm"
+  remotingSecurity:
+    enabled: true
