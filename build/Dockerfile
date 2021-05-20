@@ -8,4 +8,6 @@ COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 
 RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
 
+COPY Criterion ./Criterion
+
 COPY config.yml /var/jenkins_home/config.yml
