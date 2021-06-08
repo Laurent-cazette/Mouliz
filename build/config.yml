@@ -33,3 +33,22 @@ jenkins:
                 - "adm"
   remotingSecurity:
     enabled: true
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+unclassified:
+  email-ext:
+    mailAccount:
+      smtpHost: "smtp.gmail.com"
+      smtpPort: "465"
+      smtpUsername: "mouliz974epitech@gmail.com"
+      useSsl: true
+  mailer:
+    authentication:
+      username: "mouliz974epitech@gmail.com"
+    charset: "UTF-8"
+    smtpHost: "smtp.gmail.com"
+    smtpPort: "465"
+    useSsl: true
+jobs:
+  - file: job_mouliz.groovy
